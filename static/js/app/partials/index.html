@@ -1,0 +1,6 @@
+<h2>Доступные списки задач:</h2>
+<ul>
+<li ng-repeat="item in lists.objects">
+<a ui-sref="view({ id: item.id })">{{item.name}} ({{item.created|date:"dd.MM.yyyy, H:m"}}). Задач: {{item.tasks.length}}</a>
+</li>
+</ul>

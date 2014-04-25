@@ -1,0 +1,25 @@
+<form name="taskForm">
+	<div class="form-group">
+	    <label for="exampleInputEmail1">Название задачи</label> <a href="" ng-click="cancelTask()">X</a>
+	    <input type="text" class="form-control col-xs-5" ng-model="form.title" placeholder="Введите название задачи" required>
+	</div>
+	<div class="form-group">
+		<b>Дедлайн:</b>
+		<div class="row">
+	        <div class="col-md-3">
+	            <p class="input-group">
+	              <input ng-required="false" type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="form.deadline" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+	              <span class="input-group-btn">
+	                <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+	              </span>
+	            </p>
+	        </div>
+	    </div>
+	    <div ng-show="!isNew"></div>
+	    <label>Завершить задачу</label>
+		<input type="checkbox" ng-model="form.is_close" ng-required="false">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-info" ng-click="updateTask(taskForm)" ng-disabled="!taskForm.$valid">Обновить</button>
+	</div>
+</form>
